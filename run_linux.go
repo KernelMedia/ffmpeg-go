@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"syscall"
 
-	"github.com/KernelMedia/go-utils/rand"
+	"github.com/u2takey/go-utils/rand"
 )
 
 const (
