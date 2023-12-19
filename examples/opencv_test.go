@@ -1,3 +1,4 @@
+//go:build gocv
 // +build gocv
 
 // uncomment line above for gocv examples
@@ -12,7 +13,7 @@ import (
 	"log"
 	"testing"
 
-	ffmpeg "github.com/u2takey/ffmpeg-go"
+	ffmpeg "github.com/KernelMedia/ffmpeg-go"
 	"gocv.io/x/gocv"
 )
 

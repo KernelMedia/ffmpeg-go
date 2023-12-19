@@ -3,11 +3,11 @@ package examples
 import (
 	"testing"
 
+	ffmpeg "github.com/KernelMedia/ffmpeg-go"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/disintegration/imaging"
 	"github.com/stretchr/testify/assert"
-	ffmpeg "github.com/u2takey/ffmpeg-go"
 )
 
 //

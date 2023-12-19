@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/KernelMedia/go-utils/rand"
 	"github.com/stretchr/testify/assert"
-	"github.com/u2takey/go-utils/rand"
 )
 
 const (

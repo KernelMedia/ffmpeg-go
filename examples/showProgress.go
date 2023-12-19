@@ -13,11 +13,12 @@ import (
 	"strings"
 	"time"
 
-	ffmpeg "github.com/u2takey/ffmpeg-go"
+	ffmpeg "github.com/KernelMedia/ffmpeg-go"
 )
 
 // ExampleShowProgress is an example of using the ffmpeg `-progress` option with a
-//    unix-domain socket to report progress
+//
+//	unix-domain socket to report progress
 func ExampleShowProgress(inFileName, outFileName string) {
 	a, err := ffmpeg.Probe(inFileName)
 	if err != nil {

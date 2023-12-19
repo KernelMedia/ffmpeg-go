@@ -1,12 +1,13 @@
-//+build linux
+//go:build linux
+// +build linux
 
 package examples
 
 import (
 	"testing"
 
+	ffmpeg "github.com/KernelMedia/ffmpeg-go"
 	"github.com/stretchr/testify/assert"
-	ffmpeg "github.com/u2takey/ffmpeg-go"
 )
 
 func ComplexFilterExample(testInputFile, testOverlayFile, testOutputFile string) *ffmpeg.Stream {

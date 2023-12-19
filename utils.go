@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/u2takey/go-utils/sets"
+	"github.com/KernelMedia/go-utils/sets"
 )
 
 func getString(item interface{}) string {
