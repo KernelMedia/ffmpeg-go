@@ -268,7 +268,7 @@ func (s *Stream) Compile(options ...CompilationOption) *exec.Cmd {
 	for _, option := range GlobalCommandOptions {
 		option(cmd)
 	}
-  if LogCompiledCommand {
+	if LogCompiledCommand {
 		log.Printf("compiled command: ffmpeg %s\n", strings.Join(args, " "))
 	}
 	return cmd
@@ -286,4 +286,19 @@ func (s *Stream) Run(options ...CompilationOption) error {
 		}()
 	}
 	return s.Compile(options...).Run()
+}
+
+func (s *Stream) RunWithCmdOuput(options ...CompilationOption) (*exec.Cmd, error) {
+	if s.Context.Value("run_hook") != nil {
+		hook := s.Context.Value("run_hook").(*RunHook)
+		go hook.f()
+		defer func() {
+			if hook.closer != nil {
+				_ = hook.closer.Close()
+			}
+			<-hook.done
+		}()
+	}
+	cmd := s.Compile(options...)
+	return cmd, cmd.Wait()
 }
